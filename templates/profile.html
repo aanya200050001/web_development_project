@@ -1,0 +1,37 @@
+{% extends 'header.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<div class="container py-3">
+    {{ user_profile.updated_at }}
+	<h2>{{ user_profile.first_name }} {{ user_profile.last_name }}  ({{ user_profile.username }})</h2>
+    <h6>{{ user_profile.profile.followers }} followers</h6>
+    <span>Profile last updated : {{ user_profile.profile.updated_at }}
+        {% if user.username ==  user_profile.username%}
+        <a class="link-primary" href="/accounts/profile/update" te><u>(Update Now)</u></a>
+        {% endif %}
+
+    </span>
+	<hr>
+	<br>
+	<div class="row">
+        <ul>
+            {% for repo in repos %}
+            <li>
+                <span>
+                {{ repo.name }} - 
+                {% if repo.stargazers_count > 0%}
+                {{ repo.stargazers_count }} stars
+                {% else %}
+                0 stars
+                {% endif %}
+                </span>
+            </li>
+            {% endfor %}
+
+        </ul>
+	</div>
+</div>
+{% endblock %}

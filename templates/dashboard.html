@@ -1,0 +1,35 @@
+{% block content %}
+
+{% load static %}
+
+  <!--CTA-->
+  <div class="container py-5 bg-dark">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9 pb-6">
+        <h6 class="credit" style="text-align: center;">Built by 200050001 - 200050122</h6>
+        <h1 class="display-4 font-weight-bold welcome">Welcome to Github Profiles!</h1>
+        <div class="row justify-content-center">
+            {% if user.is_authenticated %}
+            <div class="col-2">
+                <a class="btn btn-primary mt-2" href="/accounts/explore">EXPLORE</a>
+            </div>
+            <div class="col-3">
+                <a class="btn btn-primary mt-2" href="/accounts/profile">MY PROFILE</a>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-primary mt-2" href="/accounts/logout">LOGOUT</a>
+            </div>
+            {% else %}
+            <div class="col-2">
+                <a class="btn btn-primary mt-2" href="/accounts/register">SIGNUP</a>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-primary mt-2" href="/accounts/login">LOGIN</a>
+            </div>
+            {% endif %}
+        </div>
+     </div>
+    </div>
+  </div>
+
+{% endblock %}

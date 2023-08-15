@@ -1,0 +1,29 @@
+.credit{
+    text-align: center;
+    color: red;
+}
+
+
+.welcome{
+    color: white;
+}
+
+.login-text {
+    color: blue;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.register-text{
+    color: blue;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    
+}
+
+.existing-accouint-text{
+    color: black;
+    border-style: outset
+}
